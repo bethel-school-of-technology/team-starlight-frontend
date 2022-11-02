@@ -1,0 +1,9 @@
+.container{
+    size: 50%;
+}
+
+.Footer {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+  }

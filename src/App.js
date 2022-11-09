@@ -3,7 +3,7 @@ import MainPage from './MainPage';
 import './App.css';
 import Stack from 'react-bootstrap/Stack';
 import CreateAccount from './CreateAccount';
-import RecipeList from '../images/RecipeList';
+import RecipeList from './RecipeList';
 
 function App() {
   return (

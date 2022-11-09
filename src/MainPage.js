@@ -73,7 +73,7 @@ function MainPage() {
                         </ul>
 
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-4">
                         <img src="https://trello.com/1/cards/635954c77324910240337682/attachments/635954c7732491024033769e/download/luisa-brimble-aFzg83dvnAI-unsplash.jpg" class="img-rounded" alt="group meal"></img>
                     </div>
                     <p>Welcome to Find Grub! 

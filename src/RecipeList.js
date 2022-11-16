@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import RecipeContext from "./contexts/RecipeContext";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { CardGroup } from "react-bootstrap";
 import {Row} from "react-bootstrap";
 import Stack from "react-bootstrap/Stack";
 import Container from "react-bootstrap/Container";
+import { useNavigate } from "react-router-dom";
 
 const RecipeList = () => {
   //let { addMessages } = useContext(RecipeContext);
 
+  let { recipe } = useContext(RecipeContext);
+  let navigate = useNavigate();
+  
+  let [Protein, setNewProtein] = useState();
+ 
+ let {getRecipeDetails} = useContext(RecipeContext)
+ 
+  const handleSelect = (e) => {
+    console.log(e);
+    setNewProtein(e);
+  };
+  
+  function handleLink(id) {
+console.log(id);
+
+getRecipeDetails(id);
+navigate("/recipes/"+id)
+  }
   return (
     <div>
       <br></br>
@@ -38,7 +56,13 @@ const RecipeList = () => {
                             Some quick example text to build on the card title
                             and make up the bulk of the card's content.
                           </Card.Text>
-                          <Button variant="primary">Go somewhere</Button>
+                          <Button onClick={handleLink.bind(this,c.id)}
+              
+              key={c.id}
+              className="btn btn-secondary mx-3"
+            >
+              Details
+            </Button>
                         </Card.Body>
                       </Card>
                       </Container>

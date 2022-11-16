@@ -8,6 +8,8 @@ import { UserProvider } from './contexts/UserProvider';
 import {RecipeProvider} from "./contexts/RecipeProvider";
 import AboutUs from './AboutUs/AboutUs';
 import RecipeList from './RecipeList'
+import Details from './Details/Details'
+import SavedRecipes from './SavedRecipes/SavedRecipes'
 
 function App() {
 
@@ -35,6 +37,8 @@ function App() {
             <Route path="about-us" element={<AboutUs/>} />
             <Route path="login" element={<Login/>} />
             <Route path="/results" element={<RecipeList />} />
+            <Route path="recipes/:id" element={<Details />} />
+          <Route path="recipes/saved" element={<SavedRecipes />} />
           </Routes>
         </BrowserRouter>
 

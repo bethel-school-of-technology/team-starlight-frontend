@@ -1,0 +1,39 @@
+<h1>Recipe</h1>
+<ul>
+  <div class="row">
+      
+        {{#each newrecipes}}<div class="column">
+        <div class="card">
+            
+          <h1>{{url}}</h1>
+          <img src={{imgUrl}} class="img"/><br><br>
+          <a href="/recipes/{{recipeId}}">View Details</a>
+          <a href="/recipes/edit/{{recipeId}}">Edit Details</a>
+
+          <form action="/recipes/delete/{{recipeId}}" method="POST"><br>
+
+            <button type="submit">Delete Item</button>
+        </form><br>
+        </div></div>
+        {{/each}}
+      
+
+    </div><br>
+
+    {{!-- ID;
+Title:
+Image:
+Servings:
+Ready in minutes:
+
+ExtendedIngredients: --}}
+
+
+
+  
+
+  <a href="/recipes/add">Add New Recipe</a>
+</ul>  
+
+
+  

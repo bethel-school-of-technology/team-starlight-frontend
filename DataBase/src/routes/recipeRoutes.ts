@@ -3,8 +3,8 @@ import {getAllRecipes,createRecipe, getRecipe , updateRecipe, deleteRecipe} from
 
 const router = Router();
 router.get('/', getAllRecipes);
-router.get('/:recipeId', getRecipe);
-router.put('/:recipeId', updateRecipe);
-router.delete('/:recipeId', deleteRecipe);
+router.get('/:id', getRecipe);
+router.put('/:id', updateRecipe);
+router.delete('/:id', deleteRecipe);
 router.post('/', createRecipe);
 export default router;

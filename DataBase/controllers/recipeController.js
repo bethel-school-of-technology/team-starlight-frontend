@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteRecipe = exports.updateRecipe = exports.getRecipe = exports.createRecipe = exports.getAllRecipes = void 0;
-const recipe_1 = require("../models/recipe");
+const recipe_1 = require("./models/recipe");
+
 const getAllRecipes = async (req, res, next) => {
     let recipes = await recipe_1.Recipe.findAll();
     res.status(200).json(recipes);
 };
 exports.getAllRecipes = getAllRecipes;
+
 const createRecipe = async (req, res, next) => {
     let newRecipe = req.body;
     if (newRecipe.title) {
@@ -18,6 +20,7 @@ const createRecipe = async (req, res, next) => {
     }
 };
 exports.createRecipe = createRecipe;
+
 const getRecipe = async (req, res, next) => {
     let recipeId = req.params.id;
     let recipeFound = await recipe_1.Recipe.findByPk(recipeId);
@@ -29,6 +32,7 @@ const getRecipe = async (req, res, next) => {
     }
 };
 exports.getRecipe = getRecipe;
+
 const updateRecipe = async (req, res, next) => {
     let recipeId = req.params.id;
     let newRecipe = req.body;
@@ -45,6 +49,7 @@ const updateRecipe = async (req, res, next) => {
     }
 };
 exports.updateRecipe = updateRecipe;
+
 const deleteRecipe = async (req, res, next) => {
     let recipeId = req.params.id;
     let recipeFound = await recipe_1.Recipe.findByPk(recipeId);

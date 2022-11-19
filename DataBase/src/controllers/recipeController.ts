@@ -34,7 +34,7 @@ export const updateRecipe: RequestHandler = async (req, res, next) => {
     
     let recipeFound = await Recipe.findByPk(recipeId);
     
-    if (recipeFound && recipeFound.id == newRecipe.id
+    if (recipeFound && recipeFound.recipeId == newRecipe.recipeId
         && newRecipe.title && newRecipe) {
             await Recipe.update(newRecipe, {
                 where: { id: recipeId }

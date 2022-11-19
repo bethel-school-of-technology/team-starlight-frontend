@@ -33,7 +33,7 @@ const updateRecipe = async (req, res, next) => {
     let recipeId = req.params.id;
     let newRecipe = req.body;
     let recipeFound = await recipe_1.Recipe.findByPk(recipeId);
-    if (recipeFound && recipeFound.id == newRecipe.id
+    if (recipeFound && recipeFound.recipeId == newRecipe.recipeId
         && newRecipe.title && newRecipe) {
         await recipe_1.Recipe.update(newRecipe, {
             where: { id: recipeId }

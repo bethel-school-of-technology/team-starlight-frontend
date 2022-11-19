@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.db = void 0;
 const sequelize_1 = require("sequelize");
-const recipe_1 = require("./recipe");
+const recipe_1 = require("../recipe");
 const dbName = 'FoodGrubDb';
 const username = 'root';
 const password = 'Password1!';

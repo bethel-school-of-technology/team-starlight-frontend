@@ -6,6 +6,7 @@ export class Recipe extends Model<InferAttributes<Recipe>, InferCreationAttribut
     declare image: string;
     declare servings: string;
     declare readyInMinutes: string;
+    recipeId: any;
 }
 
 export function RecipeFactory(sequelize: Sequelize) {

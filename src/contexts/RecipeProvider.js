@@ -4,8 +4,12 @@ import RecipeContext from "./RecipeContext";
 
 export const RecipeProvider = (props) => {
   const [recipe, setRecipe] = useState([]);
-  const baseUrl = "http://localhost:3000";
- 
+  const [recipesSaved, setRecipesSaved] = useState([]);
+  const baseUrl = "http://localhost:3000/api/recipe/";
+
+  //the daily api calls might get maxed, switch between key if getting 402 error
+ const apiKey1 = "1f6236fcd8d24dccb1b8b477ae016d08"
+ const apiKey2 = 
 
   useEffect(() => {
     async function fetchData() {
@@ -20,6 +24,7 @@ export const RecipeProvider = (props) => {
       "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" +
       "chicken" +
       "&number=6&limitLicense=true&ranking=1&ignorePantry=false&apiKey=1f6236fcd8d24dccb1b8b477ae016d08&include";
+      
     return axios.get(apiUrl).then((response) => setRecipe(response.data));
   }
 
@@ -32,27 +37,40 @@ export const RecipeProvider = (props) => {
   }
 
   function getRecipeDB() {
-    return axios.get(baseUrl).then(response => setRecipe(response.data));
+    return axios.get(baseUrl).then(response => setRecipesSaved(response.data));
 }
 
   function saveRecipeToDB(recipe){
     return axios.post(baseUrl, recipe)
-    .then(response => {
-        getRecipeDB();
-        return new Promise(resolve => resolve(response.data));
-    }
-);
-        
   }
+
+  function updateRecipeDB(id) {
+    return axios.put(baseUrl, id);
+}  
+
+function deleteRecipe(id) {
+  console.log("this is connected to " + id);
+    return axios
+      .delete(baseUrl + id, )
+      .then((response) => {
+        getRecipeDB();
+        return new Promise((resolve) => resolve(response.data));
+      });
+}
+
+
 
   return (
     <RecipeContext.Provider
       value={{
         recipe,
+        recipesSaved,
         getAllRecipe,
         getRecipeDetails,
         getRecipeDB,
-        saveRecipeToDB
+        saveRecipeToDB,
+        updateRecipeDB,
+        deleteRecipe
       }}
     >
       {props.children}

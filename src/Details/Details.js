@@ -19,13 +19,16 @@ const Details = () => {
 
   let [Protein, setNewProtein] = useState();
 
-  let { getRecipeDetails } = useContext(RecipeContext);
+  let { getRecipeDetails, saveRecipeToDB } = useContext(RecipeContext);
 
- function saveRecipe(){
-    
+ function saveRecipe(id){
+    saveRecipeToDB(id);
+    navigate("/recipes/saved");
  }
 
-  
+  function edit(){
+    navigate("/recipes/"+id+"/edit")
+  }
 
 
   let { id, title, image, servings, readyInMinutes  } = recipe;
@@ -37,7 +40,8 @@ const Details = () => {
           <img src={image} />
           <p>servings: {servings}</p>
           <p>REady in {readyInMinutes} minutes</p>
-          <button onClick={saveRecipe}></button>
+          <button onClick={saveRecipe}>Save Recipe</button>
+          <button onClick={edit}>Edit Recipe</button>
   </div>
     
 

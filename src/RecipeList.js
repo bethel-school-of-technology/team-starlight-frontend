@@ -24,10 +24,10 @@ const RecipeList = () => {
   
   function handleLink(id) {
 console.log(id);
-
 getRecipeDetails(id);
 navigate("/recipes/"+id)
   }
+  
   return (
     <div>
       <br></br>

@@ -33,7 +33,7 @@ navigate("/recipes/"+id)
       <br></br>
       <br></br>
 
-      <RecipeContext.Consumer>
+      { <RecipeContext.Consumer>
         {({ recipe }) => {
           return (
             <div>
@@ -75,7 +75,7 @@ navigate("/recipes/"+id)
             </div>
           );
         }}
-      </RecipeContext.Consumer>
+      </RecipeContext.Consumer> }
     </div>
   );
 };

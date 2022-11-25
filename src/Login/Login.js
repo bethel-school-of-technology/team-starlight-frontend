@@ -32,6 +32,12 @@ const SignIn = () => {
             <button>
                 Sign In
             </button>
+            <br></br>
+            <br></br>
+            <br></br>
+            <div class="col-8" className="center">
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" width="100%"></img>
+            </div>       
         </form>
         <hr />
         </div>

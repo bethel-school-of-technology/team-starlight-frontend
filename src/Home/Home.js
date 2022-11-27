@@ -1,10 +1,24 @@
 import React from "react";
 import "./Home.css";
+import { useContext, useState } from "react";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import RecipeList from "../RecipeList"
+import RecipeContext from "../contexts/RecipeContext";
+import { Link, Outlet, useSearchParams } from "react-router-dom";
+import Stack from "react-bootstrap/Stack";
 
 
-function Home() {
+function Home(props) {
+  // function callRecipes() {
+  //   RecipeList()
+  //     }
+  const [isVisible, setIsVisible] = useState(false);
+
+  function showComponent(event) {
+      setIsVisible(!isVisible);
+  }
+
     return (
         <>
         <div class="container">
@@ -60,12 +74,18 @@ function Home() {
                   Cabbage
                   </ToggleButton>
                   </ToggleButtonGroup>
+
+              
         </div>
       <div/>
       <br />
       <br />
       <div class="align-items: right">
-      <button type="button" class="btn btn-danger">Get Recipes</button>
+      <button type="button" class="btn btn-danger" onClick={showComponent} >{isVisible? 'Hide':'Show'} Recipes</button>
+      {
+                isVisible? <RecipeList/>:null
+            }
+       
                 </div>      
                 </div>
         <hr/>

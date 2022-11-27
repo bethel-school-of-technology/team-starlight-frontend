@@ -5,9 +5,10 @@ import Card from "react-bootstrap/Card";
 import {Row} from "react-bootstrap";
 import Stack from "react-bootstrap/Stack";
 import Container from "react-bootstrap/Container";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 
-const RecipeList = () => {
+
+const RecipeList = (props) => {
   //let { addMessages } = useContext(RecipeContext);
 
   let { recipe } = useContext(RecipeContext);
@@ -76,6 +77,7 @@ navigate("/recipes/"+id)
           );
         }}
       </RecipeContext.Consumer>
+      
     </div>
   );
 };

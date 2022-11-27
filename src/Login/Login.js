@@ -24,7 +24,7 @@ const SignIn = () => {
         <form className='form' onSubmit={handleSubmit}>
             <h1>LOGIN</h1>
             <span>Username  </span>
-            <input placeholder="Enter username" type="text" name="username" onChange={e => setUsername(e.target.value)} />
+            <input placeholder="Enter email" type="text" name="username" onChange={e => setUsername(e.target.value)} />
             <br></br><br></br>
             <span>Password  </span>
             <input placeholder="Enter password" type="password" name="password" onChange={e => setPassword(e.target.value)} />
@@ -36,7 +36,7 @@ const SignIn = () => {
             <br></br>
             <br></br>
             <div class="col-8" className="center">
-                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" width="100%"></img>
+                    <img src="https://images.unsplash.com/photo-1608835291093-394b0c943a75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80" width="100%" alt=""></img>
             </div>       
         </form>
         <hr />

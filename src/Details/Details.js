@@ -25,9 +25,6 @@ const Details = () => {
     
  }
 
-  
-
-
   let { id, title, image, servings, readyInMinutes  } = recipe;
   return (<div>
 

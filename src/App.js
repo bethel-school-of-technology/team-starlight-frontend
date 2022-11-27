@@ -28,6 +28,7 @@ function App() {
             <Nav.Link href="/sign-up">Sign up</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link href="/about-us">About Us</Nav.Link>
+            <Nav.Link href="/recipes/saved">My Recipes</Nav.Link>
           </Nav>
           </Container>
           </Navbar>

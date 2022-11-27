@@ -14,7 +14,7 @@ import {
 import { Button } from "react-bootstrap";
 
 const Details = () => {
-  let { recipe } = useContext(RecipeContext);
+  let { recipe, saveRecipeToDB } = useContext(RecipeContext);
   let navigate = useNavigate();
 
   let [Protein, setNewProtein] = useState();
@@ -22,11 +22,16 @@ const Details = () => {
   let { getRecipeDetails } = useContext(RecipeContext);
 
  function saveRecipe(){
-    
+  saveRecipeToDB(recipe)
+  navigate("/recipes/saved");
+
  }
 
   let { id, title, image, servings, readyInMinutes  } = recipe;
   return (<div>
+
+
+  
 
      <p>DETAILS PAGE</p>
           <p>{id}</p>
@@ -34,7 +39,8 @@ const Details = () => {
           <img src={image} />
           <p>servings: {servings}</p>
           <p>REady in {readyInMinutes} minutes</p>
-          <button onClick={saveRecipe}></button>
+          
+          <Button onClick={saveRecipe}>Save to My Recipes</Button>
   </div>
     
 

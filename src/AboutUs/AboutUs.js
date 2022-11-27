@@ -41,7 +41,7 @@ function AboutUs() {
                     </Card>
                     <br></br>
                     <br></br>
-                    <Card style={{ width: '18rem'}}>
+                    <Card style={{ width: '12em'}}>
                         <Card.Img variant="top" src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.6435-9/74471934_10157551741097482_4683297404017967104_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=b20sJyTsUuwAX_0kiIK&_nc_ht=scontent-iad3-1.xx&oh=00_AfA1VQWcD6TpaJ-4EFei--ltSUka37N7YqH11rciX4nxIg&oe=63A64604"/>
                         <Card.Body>
                         <Accordion defaultActiveKey={['2']} alwaysClosed>

@@ -32,11 +32,14 @@ function App() {
           </Container>
           </Navbar>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />}>
+             <Route path="/results" element={<RecipeList />} /> 
+            </Route>
+             
             <Route path="sign-up" element={<SignUp/>} />
             <Route path="about-us" element={<AboutUs/>} />
             <Route path="login" element={<Login/>} />
-            <Route path="/results" element={<RecipeList />} />
+            
             <Route path="recipes/:id" element={<Details />} />
           <Route path="recipes/saved" element={<SavedRecipes />} />
           </Routes>

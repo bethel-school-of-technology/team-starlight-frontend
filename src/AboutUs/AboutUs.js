@@ -16,9 +16,8 @@ function AboutUs() {
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Amy W.</Accordion.Header>
                         <Accordion.Body>
-                            Amy joined Bethel to blah blah blah blah blah blah. Interesting stuff
-                            goes here. After graduation, she plans to do something completely 
-                            awesome.
+                            Hi! I'm Amy. I am from Idaho. I attended Bethel in February 2022 because I wanted to get a job as a 
+                            Software Engineer to help provide for my family. I love to eat mangos!
                         </Accordion.Body>
                     </Accordion.Item>
                    </Accordion>
@@ -31,10 +30,9 @@ function AboutUs() {
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>Andrew R.</Accordion.Header>
                         <Accordion.Body>
-                            Andrew joined Bethel to blah blah blah blah blah blah. Interesting stuff
-                            goes here. After graduation, he plans to do something completely 
-                            awesome.
-                        </Accordion.Body>
+                        I joined Bethel to find another industry that I am passionate about where I can
+                        share God’s love. My favorite food it SEEFOOD. I am from Orange County, CA
+                    </Accordion.Body>
                     </Accordion.Item>
                    </Accordion>
                         </Card.Body>
@@ -62,11 +60,10 @@ function AboutUs() {
                         <Card.Body>
                         <Accordion defaultActiveKey={['3']} alwaysClosed>
                     <Accordion.Item eventKey="3">
-                        <Accordion.Header>Jonotan N.</Accordion.Header>
+                        <Accordion.Header>Jonatan N.</Accordion.Header>
                         <Accordion.Body>
-                            Jonatan joined Bethel to blah blah blah blah blah blah. Interesting stuff
-                            goes here. After graduation, he plans to do something completely 
-                            awesome.
+                            Jonatan is from Missouri. He joined Bethel Tech in March 2022. He wants to be a Frontend Developer to 
+                            better provide for my family. I love food!
                         </Accordion.Body>
                     </Accordion.Item>
                    </Accordion>
@@ -79,9 +76,9 @@ function AboutUs() {
                     <Accordion.Item eventKey="4">
                         <Accordion.Header>Rebekah S</Accordion.Header>
                         <Accordion.Body>
-                            Rebekah joined Bethel to blah blah blah blah blah blah. Interesting stuff
-                            goes here. After graduation, she plans to do something completely 
-                            awesome.
+                            Rebekah is from North Carolina. She joined Bethel Tech to better provide for herself and 
+                            her family. She plans to attend William Jessup University to attain her Bachelors in Computer
+                            Science. 
                         </Accordion.Body>
                     </Accordion.Item>
                    </Accordion>

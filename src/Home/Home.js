@@ -5,30 +5,37 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import RecipeList from "../RecipeList";
 import RecipeContext from "../contexts/RecipeContext";
+<<<<<<< HEAD
 // import { Link, Outlet, useSearchParams } from "react-router-dom";
 // import ButtonGroup from 'react-bootstrap/ButtonGroup';
 // import Stack from "react-bootstrap/Stack";
+=======
+import { Link, Outlet, useSearchParams } from "react-router-dom";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Stack from "react-bootstrap/Stack";
+>>>>>>> f86c997c0efa988b7e692404cef989074b0ce886
 
 function Home(props) {
   // function callRecipes() {
   //   RecipeList()
   //     }
   const [isVisible, setIsVisible] = useState(false);
-  let [protein, setNewProtein] = useState();
+  const [protein, setNewProtein] = useState();
 
-  let {getAllRecipe} = useContext(RecipeContext)
+  let { getAllRecipe } = useContext(RecipeContext);
 
   function showComponent(event) {
-        
-        setIsVisible(!isVisible);
+    setIsVisible(!isVisible);
   }
 
-  const handleSelect = (e) => {
-    console.log(protein);
-    setNewProtein(e);
-    console.log(protein);
-    return getAllRecipe(protein);
-  };
+function displayRecipes (value){
+  console.log (value);
+  setNewProtein(value);
+  console.log(value);
+  return getAllRecipe(value)
+}
+
+  
 
   return (
     <>
@@ -49,17 +56,21 @@ function Home(props) {
           <h3>
             Select your Protein <span class="badge bg-secondary"></span>
           </h3>
-          
+
           <ToggleButtonGroup
             type="checkbox"
-            onChange={handleSelect}
-            className="mb-2"
-            
+            value={protein}
+            onChange={displayRecipes}
           >
-            <ToggleButton id="tbg-check-1" value="Chicken" >
+            <ToggleButton
+              id="tbg-check-1"
+              value="Chicken"
+
+              // onChange={handleSelect}
+            >
               Chicken
             </ToggleButton>
-            <ToggleButton id="tbg-check-2" value={"Beef"} >
+            <ToggleButton id="tbg-check-2" value={"Beef"}>
               Beef
             </ToggleButton>
             <ToggleButton id="tbg-check-3" value={"Fish"}>
@@ -102,12 +113,13 @@ function Home(props) {
         <div />
         <br />
         <br />
-        <div class="align-items: right">
+        {/* <div class="align-items: right">
           <button type="button" class="btn btn-danger" onClick={showComponent}>
             {isVisible ? "Hide" : "Show"} Recipes
           </button>
           {isVisible ? <RecipeList /> : null}
-        </div>
+        </div> */}
+        <RecipeList />
       </div>
       <hr />
     </>

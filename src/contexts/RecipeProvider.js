@@ -22,13 +22,13 @@ export const RecipeProvider = (props) => {
 
   function getAllRecipe(protein) {
     //calls external API,  pass in protein from "Home.js" as parameter
-    const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${protein}&number=6&limitLicense=true&ranking=1&ignorePantry=false&apiKey=${apiKey3}&include`;
+    const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${protein}&number=6&limitLicense=true&ranking=1&ignorePantry=false&apiKey=${apiKey2}&include`;
     return axios.get(apiUrl).then((response) => setRecipe(response.data));
   }
 
   function getRecipeDetails(id) {
     //calls external API,  pass in "id" as parameter
-    const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKey3}&include`;
+    const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKey2}&include`;
     console.log(apiUrl);
     return axios.get(apiUrl).then((response) => setRecipe(response.data));
   }
@@ -43,6 +43,15 @@ export const RecipeProvider = (props) => {
       .then((response) => setRecipesSaved(response.data));
   }
 
+  function getOneRecipe(id) {
+    return axios
+      .get(`http://localhost:3000/api/recipe/${id}`)
+      .then((response) => new Promise((resolve) => resolve(response.data)))
+      .catch(
+        (error) => new Promise((_, reject) => reject(error.response.statusText))
+      );
+      
+  }
   function saveRecipeToDB(recipe) {
     return axios.post(baseUrl, recipe).then((response) => {
       getRecipeDB();
@@ -50,9 +59,18 @@ export const RecipeProvider = (props) => {
     });
   }
 
-  function updateRecipeDB(id) {
-    return axios.put(baseUrl, id);
-  }
+  // function updateRecipeDB(id) {
+  //   return axios.put(`http://localhost:3000/api/recipe/${id}`)
+
+    function updateRecipeDB(recipe) {
+      return axios
+        .put(`http://localhost:3000/api/recipe/${recipe.id}`, recipe)
+        .then((response) => {
+          
+          return new Promise((resolve) => resolve(response.data));
+        });
+    }
+  
 
   function deleteRecipe(id) {
     console.log("this is connected to " + id);
@@ -73,6 +91,7 @@ export const RecipeProvider = (props) => {
         saveRecipeToDB,
         updateRecipeDB,
         deleteRecipe,
+        getOneRecipe,
       }}
     >
       {props.children}

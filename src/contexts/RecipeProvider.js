@@ -80,19 +80,6 @@ export const RecipeProvider = (props) => {
     });
   }
 
-  function updateRecipeDB(id) {
-    return axios.put(baseUrl, id);
-}  
-
-function deleteRecipe(id) {
-  console.log("this is connected to " + id);
-    return axios
-      .delete(baseUrl + id, )
-      .then((response) => {
-        getRecipeDB();
-        return new Promise((resolve) => resolve(response.data));
-      });
-}
 
 
 

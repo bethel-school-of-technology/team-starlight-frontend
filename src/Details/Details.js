@@ -19,7 +19,7 @@ const Details = () => {
 
   let [Protein, setNewProtein] = useState();
 
-  let { getRecipeDetails, saveRecipeToDB } = useContext(RecipeContext);
+  let { getRecipeDetails } = useContext(RecipeContext);
 
  function saveRecipe(id){
     saveRecipeToDB(id);

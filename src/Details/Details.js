@@ -19,12 +19,11 @@ const Details = () => {
 
   let [Protein, setNewProtein] = useState();
 
-  let { getRecipeDetails } = useContext(RecipeContext);
+  let { getRecipeDetails, saveRecipeToDB } = useContext(RecipeContext);
 
- function saveRecipe(){
-  saveRecipeToDB(recipe)
-  navigate("/recipes/saved");
-
+ function saveRecipe(id){
+    saveRecipeToDB(id);
+    navigate("/recipes/saved");
  }
 
   let { id, title, image, servings, readyInMinutes  } = recipe;

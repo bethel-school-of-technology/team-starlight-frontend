@@ -33,7 +33,7 @@ const RecipeList = (props) => {
       <br></br>
       <br></br>
 
-      <RecipeContext.Consumer>
+      { <RecipeContext.Consumer>
         {({ recipe }) => {
           return (
             <div>
@@ -76,7 +76,7 @@ const RecipeList = (props) => {
             </div>
           );
         }}
-      </RecipeContext.Consumer>
+      </RecipeContext.Consumer> }
     </div>
   );
 };

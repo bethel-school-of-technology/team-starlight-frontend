@@ -18,6 +18,11 @@ const RecipeList = () => {
     getRecipeDetails(id);
     navigate("/recipes/" + id);
   }
+
+  function handleEditRecipe(id) {
+    console.log(id);
+    navigate("/recipes/edit/" + id);
+  }
   // useEffect((getRecipeDB()))
 
   // useEffect(getRecipeDB()) 
@@ -70,7 +75,7 @@ const RecipeList = () => {
                                 <Button
                                   onClick={handleLink.bind(this, c.id)}
                                   key={c.id}
-                                  className="btn btn-secondary mx-3"
+                                  className="btn btn-info mx-3"
                                 >
                                   Details
                                 </Button>
@@ -82,6 +87,14 @@ const RecipeList = () => {
                           >
                             Delete
                           </Button>
+
+                          <Button
+                                  onClick={handleEditRecipe.bind(this, c.id)}
+                                  key={c.id}
+                                  className="btn btn-warning mx-3"
+                                >
+                                  Edit
+                                </Button>
 
                               </Card.Body>
                             </Card>

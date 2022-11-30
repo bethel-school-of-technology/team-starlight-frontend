@@ -24,7 +24,9 @@ const SignUp = () => {
 
     return (
         <div>
+            
         <form className='form' onSubmit={handleSubmit}>
+            <div class="d-flex justify-content-center"></div>
             <h1 className='heading'>REGISTER</h1>
             <br></br><br></br>
             <span>Username  </span>
@@ -40,7 +42,14 @@ const SignUp = () => {
             <input placeholder="Enter Last Name" type="text" name="last name" value={lastName} onChange={e => setLastName(e.target.value)} />
             <br /><br></br>
             <button>Sign Up</button>
+            <br></br>
+            <br></br>
+            <br></br>
+            <div class="col-8" className="center">
+                    <img src="https://images.unsplash.com/photo-1582138079863-ec3e671f59d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1635&q=80" width="100%"></img>
+            </div>  
         </form>
+        
         <hr />
         </div>
     )

@@ -1,147 +1,129 @@
-import React, { useContext, useState } from "react";
+import React from "react";
+import "./Home.css";
+import { useContext, useState } from "react";
+import ToggleButton from "react-bootstrap/ToggleButton";
+import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
+import RecipeList from "../RecipeList";
 import RecipeContext from "../contexts/RecipeContext";
-import Card from "react-bootstrap/Card";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import { Link, Navigate, NavLink, Outlet, useNavigate, useSearchParams } from "react-router-dom";
-import { Button } from "react-bootstrap";
+<<<<<<< HEAD
+// import { Link, Outlet, useSearchParams } from "react-router-dom";
+// import ButtonGroup from 'react-bootstrap/ButtonGroup';
+// import Stack from "react-bootstrap/Stack";
+=======
+import { Link, Outlet, useSearchParams } from "react-router-dom";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Stack from "react-bootstrap/Stack";
+>>>>>>> f86c997c0efa988b7e692404cef989074b0ce886
 
-function Home() {
-    let { recipe } = useContext(RecipeContext);
-  let navigate = useNavigate();
-  
-  let [Protein, setNewProtein] = useState();
- 
- let {getRecipeDetails} = useContext(RecipeContext)
- 
-  const handleSelect = (e) => {
-    console.log(e);
-    setNewProtein(e);
-  };
-  
-  function handleLink(id) {
-console.log(id);
+function Home(props) {
+  // function callRecipes() {
+  //   RecipeList()
+  //     }
+  const [isVisible, setIsVisible] = useState(false);
+  const [protein, setNewProtein] = useState();
 
-getRecipeDetails(id);
-navigate("/recipes/"+id)
+  let { getAllRecipe } = useContext(RecipeContext);
 
+  function showComponent(event) {
+    setIsVisible(!isVisible);
   }
 
-  
-    return (
-        <>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-4 mt-5">
-                <p>Welcome to Find Grub! 
-                                Now that you're here, we know you love food as 
-                                much as we do. Enter your ingredients and search for delicious recipes. 
-                                Or, you can choose from some specialized meal options randomly.
-                    </p>
-                    <Dropdown>
-                        <DropdownButton alignRight title="Select Protein" id="dropdown-menu-align-right" onSelect={handleSelect}>
-                            
-
-                            <Dropdown.Item eventKey="Chicken">Chicken</Dropdown.Item>
-                            <Dropdown.Item eventKey="Beef">Beef</Dropdown.Item>
-                            <Dropdown.Item eventKey="Fish">Fish</Dropdown.Item>
-                        </DropdownButton>
-                    </Dropdown>
-                {/* <div class="dropdown pl-5">
-                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="recipe-dropdown" data-bs-toggle="dropdown">
-                    Choose Your Protein
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="recipe-dropdown">
-                    <li><a class="dropdown-item" href="#">Chicken</a></li>
-                    <li><a class="dropdown-item" href="#">Fish</a></li>
-                    <li><a class="dropdown-item" href="#">Beef</a></li>
-                </ul>
-            </div> */}
-             
-            <br />
-            <br />
-            <br />
-            <br />
-
-            <div class="dropdown mt-3">
-            <Dropdown>
-                        <DropdownButton alignRight title="Select Carb" id="dropdown-menu-align-right" onSelect={handleSelect}>
-                            
-
-                            <Dropdown.Item eventKey="Noodle">Noodle</Dropdown.Item>
-                            <Dropdown.Item eventKey="Potato">Potato</Dropdown.Item>
-                            <Dropdown.Item eventKey="Rice">Rice</Dropdown.Item>
-                        </DropdownButton>
-                    </Dropdown>
-            </div>
-            <br />
-            <br />
-            <br />
-            <br />
-        
-
-            <div class="dropdown mt-3">
-            <Dropdown>
-                        <DropdownButton alignRight title="Select Vegetable" id="dropdown-menu-align-right" onSelect={handleSelect}>
-                            
-
-                            <Dropdown.Item eventKey="Broccoli">Broccoli</Dropdown.Item>
-                            <Dropdown.Item eventKey="Zucchini">Zucchini</Dropdown.Item>
-                            <Dropdown.Item eventKey="Cabbage">Cabbage</Dropdown.Item>
-                        </DropdownButton>
-                    </Dropdown>
-
-                    <br></br>
-                    <br></br>
-                    <Button variant="warning">Search</Button>{' '}
-
-                    {/*  */}
-
-               </div>
-               
-                
-                
-               <RecipeContext.Consumer>
-      
-
-      {({ recipe }) => {
-            <div>
-                <div>
-              {recipe.map((c) => {
-                return (
-                  
-                  <div>
-                    <div key={c.id}>
-                    
-                      <p>{c.title}</p>
-                      <img src={c.image} /><br></br>
-                      <p>{c.id}</p>
-                      <Button onClick={handleLink.bind(this,c.id)}
-            
-            key={c.id}
-            className="btn btn-secondary mx-3"
-          >
-            Details
-          </Button>
-                      
-                      <div></div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-    }}
-    </RecipeContext.Consumer>
-                </div>
-
-            </div>
-           
-        </div>
-       
-              </>
-    )
+function displayRecipes (value){
+  console.log (value);
+  setNewProtein(value);
+  console.log(value);
+  return getAllRecipe(value)
 }
 
+  
 
-export default Home
+  return (
+    <>
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <img
+              src="https://images.unsplash.com/photo-1593759608363-fde2fa65f5d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1418&q=80"
+              class="img-fluid"
+              alt=""
+            ></img>
+            <br />
+            <br />
+          </div>
+          <br />
+          <br />
+          <br />
+          <h3>
+            Select your Protein <span class="badge bg-secondary"></span>
+          </h3>
+
+          <ToggleButtonGroup
+            type="checkbox"
+            value={protein}
+            onChange={displayRecipes}
+          >
+            <ToggleButton
+              id="tbg-check-1"
+              value="Chicken"
+
+              // onChange={handleSelect}
+            >
+              Chicken
+            </ToggleButton>
+            <ToggleButton id="tbg-check-2" value={"Beef"}>
+              Beef
+            </ToggleButton>
+            <ToggleButton id="tbg-check-3" value={"Fish"}>
+              Fish
+            </ToggleButton>
+          </ToggleButtonGroup>
+          <h4>You selected {protein}</h4>
+          {/* </div> */}
+          <br />
+          <br />
+
+          {/* <h3>Select your Carbohydrate<span class="badge bg-secondary"></span></h3>
+                <ToggleButtonGroup type="checkbox" defaultValue={[4,5,6]} className="mb-2">
+                  <ToggleButton id="tbg-check-4" value={4}>
+                    Noodle
+                    </ToggleButton>
+                    <ToggleButton id="tbg-check-5" value={5}>
+                      Potato
+                      </ToggleButton>
+                      <ToggleButton id="tbg-check-6" value={6}>
+                        Rice
+                        </ToggleButton>
+                        </ToggleButtonGroup>
+                          <br />
+                          <br />
+                        
+          <h3>Select your Vegetable<span class="badge bg-secondary"></span></h3>
+          <ToggleButtonGroup type="checkbox" defaultValue={[7,8,9]} className="mb-2">
+            <ToggleButton id="tbg-check-7" value={7}>
+              Broccoli
+              </ToggleButton>
+              <ToggleButton id="tbg-check-8" value={8}>
+                Zucchini  
+                </ToggleButton>
+                <ToggleButton id="tbg-check-9" value={9}>
+                  Cabbage
+                  </ToggleButton>
+                  </ToggleButtonGroup> */}
+        </div>
+        <div />
+        <br />
+        <br />
+        {/* <div class="align-items: right">
+          <button type="button" class="btn btn-danger" onClick={showComponent}>
+            {isVisible ? "Hide" : "Show"} Recipes
+          </button>
+          {isVisible ? <RecipeList /> : null}
+        </div> */}
+        <RecipeList />
+      </div>
+      <hr />
+    </>
+  );
+}
+
+export default Home;

@@ -27,7 +27,7 @@ const Details = () => {
 
  }
 
-  let { id, title, image, servings, readyInMinutes  } = recipe;
+  let { id, title, image, servings, readyInMinutes, ingredientWidget } = recipe;
   return (<div>
 
 
@@ -38,7 +38,8 @@ const Details = () => {
           <p>{title}</p>
           <img src={image} />
           <p>servings: {servings}</p>
-          <p>REady in {readyInMinutes} minutes</p>
+          <p>Ready in {readyInMinutes} minutes</p>
+          <p>Instructions: {ingredientWidget}</p>
           
           <Button onClick={saveRecipe}>Save to My Recipes</Button>
   </div>

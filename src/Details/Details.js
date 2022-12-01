@@ -38,6 +38,7 @@ const Details = () => {
           <img src={image} />
           <p>servings: {servings}</p>
           <p>REady in {readyInMinutes} minutes</p>
+          <p>servings: {servings}</p>
           
           <Button onClick={saveRecipe}>Save to My Recipes</Button>
   </div>

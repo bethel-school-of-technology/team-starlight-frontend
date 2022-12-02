@@ -15,7 +15,7 @@ const SignUp = () => {
     function handleSubmit(event) {
         event.preventDefault();
         createUser(username, password, firstName, lastName).then(() => {
-            navigate('/signin');
+            navigate('/login');
         }).catch(error => {
             console.log(error);
             window.alert('Failed registration: error creating user');

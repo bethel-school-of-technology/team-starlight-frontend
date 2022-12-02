@@ -27,7 +27,10 @@ const Details = () => {
 
  }
 
-  let { id, title, image, servings, readyInMinutes, ingredientWidget } = recipe;
+  let { id, title, image, servings, readyInMinutes, instructions, analyzedInstructions } = recipe;
+  
+  console.log(analyzedInstructions);
+  
   return (<div>
 
 
@@ -39,7 +42,21 @@ const Details = () => {
           <img src={image} />
           <p>servings: {servings}</p>
           <p>Ready in {readyInMinutes} minutes</p>
-          <p>Instructions: {ingredientWidget}</p>
+          <p>Instructions: {instructions}</p>
+
+          {analyzedInstructions.map((instructionItem) => {
+
+            return (<>
+            {instructionItem.steps.map((stepItem) => {
+
+
+                      return (<p>{stepItem.number}. {stepItem.step}</p>)
+            })}
+
+          </>)
+
+          })}
+          
           
           <Button onClick={saveRecipe}>Save to My Recipes</Button>
   </div>

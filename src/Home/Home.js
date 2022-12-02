@@ -70,7 +70,7 @@ function displayRecipes (value){
               Fish
             </ToggleButton>
           </ToggleButtonGroup>
-          <h4>You selected {protein}</h4>
+          
           {/* </div> */}
           <br />
           <br />
@@ -94,11 +94,11 @@ function displayRecipes (value){
               Rice
             </ToggleButton>
           </ToggleButtonGroup>
-          <h4>You selected {protein}</h4>
+          
           {/* </div> */}
           <br />
           <br />
-
+          
           <h3>
             Select your Vegetable <span class="badge bg-secondary"></span>
           </h3>

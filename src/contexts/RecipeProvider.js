@@ -28,7 +28,7 @@ export const RecipeProvider = (props) => {
 
   function getRecipeDetails(id) {
     //calls external API,  pass in "id" as parameter
-    const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKey1}&include`;
+    const apiUrl =  `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKey1}&include`;
     console.log(apiUrl);
     return axios.get(apiUrl).then((response) => setRecipe(response.data));
   }

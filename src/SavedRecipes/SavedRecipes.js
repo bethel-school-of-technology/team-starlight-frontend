@@ -23,14 +23,20 @@ const RecipeList = () => {
     console.log(id);
     navigate("/recipes/edit/" + id);
   }
-  // useEffect((getRecipeDB()))
-
-  // useEffect(getRecipeDB()) 
+ 
+  function loadPage() {
+    
+    getRecipeDB().catch(error => {
+        console.log(error);
+        navigate('/login');
+        alert("You must login to view this page")
+    });
+}
 
   useEffect(() => {
-    
-    getRecipeDB();
-  }, []);
+
+    loadPage();
+      }, []);
 
   function updateSavedRecipes(id){
     updateRecipeDB(id);

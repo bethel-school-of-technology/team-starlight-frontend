@@ -10,7 +10,6 @@ import AboutUs from './AboutUs/AboutUs';
 import RecipeList from './RecipeList'
 import Details from './Details/Details'
 import SavedRecipes from './SavedRecipes/SavedRecipes'
-
 import EditRecipe from './EditRecipe/EditRecipe'
 
 function App() {

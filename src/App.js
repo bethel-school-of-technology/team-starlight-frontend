@@ -11,6 +11,7 @@ import RecipeList from './RecipeList'
 import Details from './Details/Details'
 import SavedRecipes from './SavedRecipes/SavedRecipes'
 import EditRecipe from './EditRecipe/EditRecipe'
+import SavedDetails from './Details/SavedDetails'
 
 function App() {
 
@@ -43,7 +44,8 @@ function App() {
             <Route path="login" element={<Login/>} />
             {<Route path="/results" element={<RecipeList />} /> }
             <Route path="recipes/:id" element={<Details />} />
-            <Route path="recipes/edit/:id" element={<EditRecipe />} />
+            <Route path="savedrecipes/:savedRecipeId" element={<SavedDetails />} />
+            <Route path="recipes/edit/:savedRecipeId" element={<EditRecipe />} />
           <Route path="recipes/saved" element={<SavedRecipes />} />
           </Routes>
         </BrowserRouter>

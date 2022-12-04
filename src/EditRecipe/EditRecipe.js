@@ -8,6 +8,7 @@ import RecipeContext from "../contexts/RecipeContext";
 function RecipeForm() {
   let params = useParams();
   let [recipe, setRecipe] = useState({
+    savedRecipeId:params.savedRecipeId,
     id: params.id,
     title: params.title,
     image: "",
@@ -18,13 +19,13 @@ function RecipeForm() {
   let { getOneRecipe, addRecipe, updateRecipeDB } = useContext(RecipeContext);
   let navigate = useNavigate();
 
-  let { id, title, image, servings, readyInMinutes } = recipe;
+  let { id, title, image, servings, readyInMinutes, savedRecipeId } = recipe;
 
   useEffect(
     () => {
-      if (id === undefined) return;
+      if (savedRecipeId === undefined) return;
       async function fetch() {
-        await getOneRecipe(id).then((recipe) => setRecipe(recipe));
+        await getOneRecipe(savedRecipeId).then((recipe) => setRecipe(recipe));
       }
 
       fetch();

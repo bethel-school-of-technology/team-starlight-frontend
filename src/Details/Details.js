@@ -26,7 +26,10 @@ const Details = () => {
     navigate("/recipes/saved");
  }
 
-  let { id, title, image, servings, readyInMinutes  } = recipe;
+  let { id, title, image, servings, readyInMinutes, instructions, analyzedInstructions } = recipe;
+  
+  console.log(analyzedInstructions);
+  
   return (<div>
 
 
@@ -37,8 +40,23 @@ const Details = () => {
           <p>{title}</p>
           <img src={image} />
           <p>servings: {servings}</p>
-          <p>REady in {readyInMinutes} minutes</p>
-          <p>servings: {servings}</p>
+          <p>Ready in {readyInMinutes} minutes</p>
+          
+          {analyzedInstructions.map((instructionItem) => {
+
+return (<>
+{instructionItem.steps.map((stepItem) => {
+
+
+          return (<p>{stepItem.number}. {stepItem.step}</p>)
+})}
+
+</>)
+
+})}
+
+          
+          
           
           <Button onClick={saveRecipe}>Save to My Recipes</Button>
   </div>

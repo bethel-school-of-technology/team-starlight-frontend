@@ -5,9 +5,9 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import RecipeList from "../RecipeList";
 import RecipeContext from "../contexts/RecipeContext";
-// import { Link, Outlet, useSearchParams } from "react-router-dom";
-// import ButtonGroup from 'react-bootstrap/ButtonGroup';
-// import Stack from "react-bootstrap/Stack";
+import { Link, Outlet, useSearchParams } from "react-router-dom";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Stack from "react-bootstrap/Stack";
 
 function Home(props) {
   // function callRecipes() {
@@ -15,6 +15,8 @@ function Home(props) {
   //     }
   const [isVisible, setIsVisible] = useState(false);
   const [protein, setNewProtein] = useState();
+  const [carbohydrate, setNewCarbohydrate] = useState();
+  const [vegetable, setNewVegetable] = useState();
 
   let { getAllRecipe } = useContext(RecipeContext);
 
@@ -25,6 +27,8 @@ function Home(props) {
 function displayRecipes (value){
   console.log (value);
   setNewProtein(value);
+  setNewCarbohydrate(value);
+  setNewVegetable(value);
   console.log(value);
   return getAllRecipe(value)
 }
@@ -56,12 +60,7 @@ function displayRecipes (value){
             value={protein}
             onChange={displayRecipes}
           >
-            <ToggleButton
-              id="tbg-check-1"
-              value="Chicken"
-
-              // onChange={handleSelect}
-            >
+            <ToggleButton id="tbg-check-1" value={"Chicken"}>
               Chicken
             </ToggleButton>
             <ToggleButton id="tbg-check-2" value={"Beef"}>
@@ -69,6 +68,54 @@ function displayRecipes (value){
             </ToggleButton>
             <ToggleButton id="tbg-check-3" value={"Fish"}>
               Fish
+            </ToggleButton>
+          </ToggleButtonGroup>
+          
+          {/* </div> */}
+          <br />
+          <br />
+
+          <h3>
+            Select your Carbohydrate <span class="badge bg-secondary"></span>
+          </h3>
+
+          <ToggleButtonGroup
+            type="checkbox"
+            value={carbohydrate}
+            onChange={displayRecipes}
+          >
+            <ToggleButton id="tbg-check-4" value={"Noodle"}>
+              Noodle
+            </ToggleButton>
+            <ToggleButton id="tbg-check-5" value={"Potato"}>
+              Potato
+            </ToggleButton>
+            <ToggleButton id="tbg-check-6" value={"Rice"}>
+              Rice
+            </ToggleButton>
+          </ToggleButtonGroup>
+          
+          {/* </div> */}
+          <br />
+          <br />
+          
+          <h3>
+            Select your Vegetable <span class="badge bg-secondary"></span>
+          </h3>
+
+          <ToggleButtonGroup
+            type="checkbox"
+            value={vegetable}
+            onChange={displayRecipes}
+          >
+            <ToggleButton id="tbg-check-7" value={"Broccoli"}>
+              Broccoli
+            </ToggleButton>
+            <ToggleButton id="tbg-check-8" value={"Zucchini"}>
+              Zucchini
+            </ToggleButton>
+            <ToggleButton id="tbg-check-9" value={"Cabbage"}>
+              Cabbage
             </ToggleButton>
           </ToggleButtonGroup>
           <h4>You selected {protein}</h4>

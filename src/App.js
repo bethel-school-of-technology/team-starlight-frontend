@@ -11,19 +11,26 @@ import RecipeList from './RecipeList'
 import Details from './Details/Details'
 import SavedRecipes from './SavedRecipes/SavedRecipes'
 import EditRecipe from './EditRecipe/EditRecipe'
+<<<<<<< Updated upstream
+import SavedDetails from './Details/SavedDetails'
 
+=======
+ 
+>>>>>>> Stashed changes
 function App() {
-
+ 
   return (
+    <>
     <UserProvider>
     <RecipeProvider>
         <BrowserRouter>
+        <Navbar className="Navbar" expand="lg">       
           <Navbar bg="gray">
           <img src="https://www.citypng.com/public/uploads/small/11637221757bxddbtect7yzembsrxthedntofx7p81pziqcptiod2jduacd8qke3jaeadhcabswtrho0ogcphosnvsz1djnxpswexq8lafpbjzk.png" width="30" height="30" alt="" />
           <Navbar.Brand className="brand">  Find Grub</Navbar.Brand>
           <img src="https://www.citypng.com/public/uploads/small/11637221757bxddbtect7yzembsrxthedntofx7p81pziqcptiod2jduacd8qke3jaeadhcabswtrho0ogcphosnvsz1djnxpswexq8lafpbjzk.png" width="30" height="30" alt="" />
-          
-          <Container className="container" class="text-center">
+         
+          <Container className="container" class="flex-direction-row">
           <Nav>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/sign-up">Sign up</Nav.Link>
@@ -32,10 +39,10 @@ function App() {
             <Nav.Link href="/recipes/saved">My Recipes</Nav.Link>
           </Nav>
           </Container>
-          </Navbar>
+          </Navbar>/80
           <Routes>
             <Route path="/" element={<Home />}>
-             <Route path="/results" element={<RecipeList />} /> 
+             <Route path="/results" element={<RecipeList />} />
             </Route>
              
             <Route path="sign-up" element={<SignUp/>} />
@@ -43,11 +50,14 @@ function App() {
             <Route path="login" element={<Login/>} />
             {<Route path="/results" element={<RecipeList />} /> }
             <Route path="recipes/:id" element={<Details />} />
-            <Route path="recipes/edit/:id" element={<EditRecipe />} />
+            <Route path="savedrecipes/:savedRecipeId" element={<SavedDetails />} />
+            <Route path="recipes/edit/:savedRecipeId" element={<EditRecipe />} />
           <Route path="recipes/saved" element={<SavedRecipes />} />
           </Routes>
+          </Navbar>
         </BrowserRouter>
-
+        
+ 
         <footer className="footer">
           <div class="text-left">
             <p>@ copyright 2022 Starlight || BST Group Project</p>
@@ -55,8 +65,9 @@ function App() {
         </footer>
     </RecipeProvider>
     </UserProvider>
-    
+    </>
     );
 }
-
+ 
 export default App;
+

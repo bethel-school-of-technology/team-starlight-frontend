@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const RecipeList = (props) => {
   //let { addMessages } = useContext(RecipeContext);
 
-  let { recipe } = useContext(RecipeContext);
+  let { recipes } = useContext(RecipeContext);
   let navigate = useNavigate();
 
   let [Protein, setNewProtein] = useState();
@@ -34,7 +34,7 @@ const RecipeList = (props) => {
       <br></br>
 
       { <RecipeContext.Consumer>
-        {({ recipe }) => {
+        {({ recipes }) => {
           return (
             <div>
               <br></br>
@@ -44,7 +44,7 @@ const RecipeList = (props) => {
               <div>
                 <Stack direction="horizontal" gap={3} class="card deck">
                   <Row xs lg="3" className="mb-2">
-                    {recipe.map((c) => {
+                    {recipes.map((c) => {
                       return (
                         <div>
                           <Container>

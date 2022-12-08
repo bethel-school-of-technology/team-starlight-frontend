@@ -39,16 +39,25 @@ export const RecipeProvider = (props) => {
   //BACKEND DATABASE OPERATIONS
 
   function getRecipeDB() {
+    let token = localStorage.getItem('myRecipeToken');
+    let headers = {
+      Authorization : 'Bearer ' + token
+    } 
+
     return axios
-      .get(baseUrl, (req, res) => {
+      .get(baseUrl, {headers}, (req, res) => {
         res.setHeader("Access-Control-Allow-Origin", "*");
       })
       .then((response) => setRecipesSaved(response.data));
   }
 
   function getOneRecipe(id) {
+    let token = localStorage.getItem('myRecipeToken');
+    let headers = {
+      Authorization : 'Bearer ' + token
+    } 
     return axios
-      .get(`http://localhost:3000/api/recipe/${id}`)
+      .get(`http://localhost:3000/api/recipe/${id}`,{headers})
       .then((response) => new Promise((resolve) => resolve(response.data)))
       .catch(
         (error) => new Promise((_, reject) => reject(error.response.statusText))
@@ -56,18 +65,25 @@ export const RecipeProvider = (props) => {
       
   }
   function saveRecipeToDB(recipe) {
-    return axios.post(baseUrl, recipe).then((response) => {
+    let token = localStorage.getItem('myRecipeToken');
+    let headers = {
+      Authorization : 'Bearer ' + token
+    } 
+
+    return axios.post(baseUrl, recipe, {headers}).then((response) => {
       getRecipeDB();
       return new Promise((resolve) => resolve(response.data));
     });
   }
 
-  // function updateRecipeDB(id) {
-  //   return axios.put(`http://localhost:3000/api/recipe/${id}`)
 
     function updateRecipeDB(recipe) {
+      let token = localStorage.getItem('myRecipeToken');
+      let headers = {
+        Authorization : 'Bearer ' + token
+      } 
       return axios
-        .put(`http://localhost:3000/api/recipe/${recipe.id}`, recipe)
+        .put(`http://localhost:3000/api/recipe/${recipe.id}`, recipe, {headers})
         .then((response) => {
           
           return new Promise((resolve) => resolve(response.data));
@@ -82,6 +98,9 @@ export const RecipeProvider = (props) => {
       return new Promise((resolve) => resolve(response.data));
     });
   }
+
+
+
 
   return (
     <RecipeContext.Provider

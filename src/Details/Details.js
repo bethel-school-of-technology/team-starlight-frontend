@@ -26,9 +26,8 @@ const Details = () => {
   let { getRecipeDetails } = useContext(RecipeContext);
 
  function saveRecipe(){
-  saveRecipeToDB(recipe)
-  navigate("/recipes/saved");
-
+    saveRecipeToDB(recipe);
+    navigate("/recipes/saved");
  }
 
  useEffect(() => {

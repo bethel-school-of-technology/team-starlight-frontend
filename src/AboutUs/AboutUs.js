@@ -31,29 +31,13 @@ function AboutUs() {
                         <Accordion.Header>Andrew R.</Accordion.Header>
                         <Accordion.Body>
                         I joined Bethel to find another industry that I am passionate about where I can
-                        share God’s love. My favorite food it SEEFOOD. I am from Orange County, CA
+                        share God's love. My favorite food it SEEFOOD. I am from Orange County, CA
                     </Accordion.Body>
                     </Accordion.Item>
                    </Accordion>
                         </Card.Body>
                     </Card>
                     <br></br>
-                    <br></br>
-                    <Card style={{ width: '12em'}}>
-                        <Card.Img variant="top" src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.6435-9/74471934_10157551741097482_4683297404017967104_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=b20sJyTsUuwAX_0kiIK&_nc_ht=scontent-iad3-1.xx&oh=00_AfA1VQWcD6TpaJ-4EFei--ltSUka37N7YqH11rciX4nxIg&oe=63A64604"/>
-                        <Card.Body>
-                        <Accordion defaultActiveKey={['2']} alwaysClosed>
-                    <Accordion.Item eventKey="2">
-                        <Accordion.Header>Ben L.</Accordion.Header>
-                        <Accordion.Body>
-                            Ben joined Bethel to blah blah blah blah blah blah. Interesting stuff
-                            goes here. After graduation, he plans to do something completely 
-                            awesome.
-                        </Accordion.Body>
-                    </Accordion.Item>
-                   </Accordion>
-                        </Card.Body>
-                    </Card>
                     <br></br>
                     <Card style={{ width: '20rem'}}>
                         <Card.Img variant="top" src="https://ca.slack-edge.com/T9P33872P-U039YLRV0R5-4104a6f26637-512" />

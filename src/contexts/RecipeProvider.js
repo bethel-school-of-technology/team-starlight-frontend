@@ -5,6 +5,7 @@ import RecipeContext from "./RecipeContext";
 export const RecipeProvider = (props) => {
   const [recipes, setRecipes] = useState([]);
   const [recipe, setRecipe] = useState([]);
+  const [recipes, setRecipes] = useState([]);
   const [recipesSaved, setRecipesSaved] = useState([]);
 
   const baseUrl = "http://localhost:3000/api/recipe/";

@@ -5,9 +5,6 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import RecipeList from "../RecipeList";
 import RecipeContext from "../contexts/RecipeContext";
-import { Link, Outlet, useSearchParams } from "react-router-dom";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Stack from "react-bootstrap/Stack";
 
 function Home(props) {
   // function callRecipes() {

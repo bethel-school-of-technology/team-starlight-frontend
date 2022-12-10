@@ -47,7 +47,7 @@ function AboutUs() {
                         <Accordion.Header>Jonatan N.</Accordion.Header>
                         <Accordion.Body>
                             Jonatan is from Missouri. He joined Bethel Tech in March 2022. He wants to be a Frontend Developer to 
-                            better provide for my family. I love food!
+                            better provide for my family. He loves food!
                         </Accordion.Body>
                     </Accordion.Item>
                    </Accordion>
@@ -61,8 +61,8 @@ function AboutUs() {
                         <Accordion.Header>Rebekah S</Accordion.Header>
                         <Accordion.Body>
                             Rebekah is from North Carolina. She joined Bethel Tech to better provide for herself and 
-                            her family. She plans to attend William Jessup University to attain her Bachelors in Computer
-                            Science. 
+                            her family. She would love to work as a developer for a church and or get a job working
+                            at the FBI.
                         </Accordion.Body>
                     </Accordion.Item>
                    </Accordion>

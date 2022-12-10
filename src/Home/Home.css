@@ -1,7 +1,7 @@
 .container {
     padding: 5px 2px 5px 2px  ;
     margin: 0px 50px;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 h3 {
@@ -17,4 +17,6 @@ h3 {
     .row {
     margin-top: 10px;
   }
+ 
+
  

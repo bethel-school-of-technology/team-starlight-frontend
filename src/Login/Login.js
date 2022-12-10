@@ -12,7 +12,8 @@ const SignIn = () => {
     function handleSubmit(event) {
         event.preventDefault();
         signInUser(username, password).then(() => {
-            navigate('/recipes');
+            navigate('/recipes/saved');
+            
         }).catch(error => {
             console.log(error);
             window.alert('Failed login');

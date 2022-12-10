@@ -11,34 +11,36 @@ const RecipeList = () => {
   let { recipesSaved } = useContext(RecipeContext);
   let navigate = useNavigate();
 
-  let { getRecipeDetails, getRecipeDB, updateRecipeDB, deleteRecipe } = useContext(RecipeContext);
+  let { getOneRecipe, getRecipeDB,  deleteRecipe } = useContext(RecipeContext);
 
-  function handleLink(id) {
-    console.log(id);
-    getRecipeDetails(id);
-    navigate("/recipes/" + id);
+  function handleDetails(savedRecipeId) {
+    // getOneRecipe(savedRecipeId);
+    navigate("/savedrecipes/" + savedRecipeId);
   }
 
-  function handleEditRecipe(id) {
-    console.log(id);
-    navigate("/recipes/edit/" + id);
+  function handleEditRecipe(savedRecipeId) {
+    console.log(savedRecipeId);
+    navigate("/recipes/edit/" + savedRecipeId);
   }
-  // useEffect((getRecipeDB()))
-
-  // useEffect(getRecipeDB()) 
+ 
+  function loadPage() {
+    
+    getRecipeDB().catch(error => {
+        console.log(error);
+        navigate('/login');
+        alert("You must login to view this page")
+    });
+}
 
   useEffect(() => {
-    
-    getRecipeDB();
-  }, []);
 
-  function updateSavedRecipes(id){
-    updateRecipeDB(id);
-    navigate("/recipes/")
-  }
+    loadPage();
+      }, []);
 
-  function handleDelete(id) {
-    deleteRecipe(id);
+ 
+
+  function handleDelete(savedRecipeId) {
+    deleteRecipe(savedRecipeId);
     getRecipeDB();
         navigate("/recipes/saved");
      }
@@ -63,7 +65,7 @@ const RecipeList = () => {
                       return (
                         <div>
                           <Container>
-                            <Card key={c.id} style={{ width: "18rem" }}>
+                            <Card key={c.savedRecipeId} style={{ width: "18rem" }}>
                               <Card.Img variant="top" src={c.image} />
                               <Card.Body>
                                 <Card.Title>{c.title}</Card.Title>
@@ -73,7 +75,7 @@ const RecipeList = () => {
                                 </Card.Text>
                                 
                                 <Button
-                                  onClick={handleLink.bind(this, c.id)}
+                                  onClick={handleDetails.bind(this, c.savedRecipeId)}
                                   key={c.id}
                                   className="btn btn-info mx-3"
                                 >
@@ -83,13 +85,13 @@ const RecipeList = () => {
                                 <Button
                                 className="btn btn-danger mx-3"
                             class="btn  btn-sm"
-                            onClick={() => handleDelete(c.id)}
+                            onClick={() => handleDelete(c.savedRecipeId)}
                           >
                             Delete
                           </Button>
 
                           <Button
-                                  onClick={handleEditRecipe.bind(this, c.id)}
+                                  onClick={handleEditRecipe.bind(this, c.savedRecipeId)}
                                   key={c.id}
                                   className="btn btn-warning mx-3"
                                 >

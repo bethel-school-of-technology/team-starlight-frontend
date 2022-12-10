@@ -51,13 +51,13 @@ export const RecipeProvider = (props) => {
       .then((response) => setRecipesSaved(response.data));
   }
 
-  function getOneRecipe(id) {
+  function getOneRecipe(savedRecipeId) {
     let token = localStorage.getItem('myRecipeToken');
     let headers = {
       Authorization : 'Bearer ' + token
     } 
     return axios
-      .get(`http://localhost:3000/api/recipe/${id}`,{headers})
+      .get(`http://localhost:3000/api/recipe/${savedRecipeId}`,{headers})
       .then((response) => new Promise((resolve) => resolve(response.data)))
       .catch(
         (error) => new Promise((_, reject) => reject(error.response.statusText))
@@ -83,7 +83,7 @@ export const RecipeProvider = (props) => {
         Authorization : 'Bearer ' + token
       } 
       return axios
-        .put(`http://localhost:3000/api/recipe/${recipe.id}`, recipe, {headers})
+        .put(`http://localhost:3000/api/recipe/${recipe.savedRecipeId}`, recipe, {headers})
         .then((response) => {
           
           return new Promise((resolve) => resolve(response.data));
@@ -91,9 +91,9 @@ export const RecipeProvider = (props) => {
     }
   
 
-  function deleteRecipe(id) {
-    console.log("this is connected to " + id);
-    return axios.delete(baseUrl + id).then((response) => {
+  function deleteRecipe(savedRecipeId) {
+    console.log("this is connected to " + savedRecipeId);
+    return axios.delete(baseUrl + savedRecipeId).then((response) => {
       getRecipeDB();
       return new Promise((resolve) => resolve(response.data));
     });

@@ -17,6 +17,7 @@ function App() {
  
   return (
     <>
+    
     <UserProvider>
     <RecipeProvider>
         <BrowserRouter>
@@ -35,7 +36,7 @@ function App() {
             <Nav.Link href="/recipes/saved">My Recipes</Nav.Link>
           </Nav>
           </Container>
-          </Navbar>/80
+          </Navbar>
           <Routes>
             <Route path="/" element={<Home />}>
              <Route path="/results" element={<RecipeList />} />

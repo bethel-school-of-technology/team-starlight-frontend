@@ -11,12 +11,8 @@ import RecipeList from './RecipeList'
 import Details from './Details/Details'
 import SavedRecipes from './SavedRecipes/SavedRecipes'
 import EditRecipe from './EditRecipe/EditRecipe'
-<<<<<<< Updated upstream
 import SavedDetails from './Details/SavedDetails'
 
-=======
- 
->>>>>>> Stashed changes
 function App() {
  
   return (

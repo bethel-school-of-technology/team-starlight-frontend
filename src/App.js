@@ -37,6 +37,7 @@ function App() {
           </Nav>
           </Container>
           </Navbar>
+          </Navbar>
           <Routes>
             <Route path="/" element={<Home />}>
              <Route path="/results" element={<RecipeList />} />
@@ -51,7 +52,6 @@ function App() {
             <Route path="recipes/edit/:savedRecipeId" element={<EditRecipe />} />
           <Route path="recipes/saved" element={<SavedRecipes />} />
           </Routes>
-          </Navbar>
         </BrowserRouter>
         
  

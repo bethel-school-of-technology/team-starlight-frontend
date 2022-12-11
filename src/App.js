@@ -23,9 +23,9 @@ function App() {
         <BrowserRouter>
         <Navbar className="Navbar" expand="lg">       
           <Navbar bg="gray">
-          <img src="https://www.citypng.com/public/uploads/small/11637221757bxddbtect7yzembsrxthedntofx7p81pziqcptiod2jduacd8qke3jaeadhcabswtrho0ogcphosnvsz1djnxpswexq8lafpbjzk.png" width="30" height="30" alt="" />
+          <img classname="Logo" src="https://www.citypng.com/public/uploads/small/11637221757bxddbtect7yzembsrxthedntofx7p81pziqcptiod2jduacd8qke3jaeadhcabswtrho0ogcphosnvsz1djnxpswexq8lafpbjzk.png" width="30" height="30" alt="" />
           <Navbar.Brand className="brand">  Find Grub</Navbar.Brand>
-          <img src="https://www.citypng.com/public/uploads/small/11637221757bxddbtect7yzembsrxthedntofx7p81pziqcptiod2jduacd8qke3jaeadhcabswtrho0ogcphosnvsz1djnxpswexq8lafpbjzk.png" width="30" height="30" alt="" />
+          <img classname="Logo" src="https://www.citypng.com/public/uploads/small/11637221757bxddbtect7yzembsrxthedntofx7p81pziqcptiod2jduacd8qke3jaeadhcabswtrho0ogcphosnvsz1djnxpswexq8lafpbjzk.png" width="30" height="30" alt="" />
          
           <Container className="container" class="flex-direction-row">
           <Nav>

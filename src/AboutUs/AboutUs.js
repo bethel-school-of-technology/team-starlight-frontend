@@ -7,6 +7,7 @@ function AboutUs() {
         <>
             <h1>About Us</h1>
             <br />
+            <div className="About">
             <div class="container-fluid">
                 <div class="row">
                 <Card style={{ width: '20rem'}}>
@@ -71,6 +72,7 @@ function AboutUs() {
                    
                     
                 </div>
+            </div>
             </div>
             <hr />
     </>

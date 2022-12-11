@@ -5,6 +5,11 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import RecipeList from "../RecipeList";
 import RecipeContext from "../contexts/RecipeContext";
+import {
+  MDBCarousel,
+  MDBCarouselItem,
+} from 'mdb-react-ui-kit';
+
 
 
 function Home(props) {
@@ -35,8 +40,58 @@ function displayRecipes (value){
 
   return (
     <>
+    
       <div class="container">
+      
         <div class="row">
+
+        {/* <MDBCarousel  showControls fade>
+      <MDBCarouselItem
+        className='w-100 d-block'
+        itemId={1}
+        src='https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+        alt='...'
+      >
+       
+      </MDBCarouselItem>
+
+      <MDBCarouselItem
+        className='w-50 h-10 d-block'
+        itemId={2}
+        src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=999&q=80'
+        alt='...'
+      >
+        
+      </MDBCarouselItem>
+
+      <MDBCarouselItem
+        className='w-50 h-10 d-block'
+        itemId={3}
+        src='https://images.unsplash.com/photo-1540914124281-342587941389?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'
+        alt='...'
+      >
+       
+      </MDBCarouselItem>
+
+      <MDBCarouselItem
+        className='w-50 h-10 d-block'
+        itemId={4}
+        src='https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+        alt='...'
+      >
+       
+      </MDBCarouselItem>
+
+      <MDBCarouselItem
+        className='w-50 h-10 d-block'
+        itemId={5}
+        src='https://images.unsplash.com/photo-1486485764572-92b96f21882a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'
+        alt='...'
+      >
+       
+      </MDBCarouselItem>
+    </MDBCarousel> */}
+          <div className="img">
           <div class="col-8">
             <img
               src="https://images.unsplash.com/photo-1593759608363-fde2fa65f5d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1418&q=80"
@@ -46,9 +101,8 @@ function displayRecipes (value){
             <br />
             <br />
           </div>
-          <br />
-          <br />
-          <br />
+          </div>
+
           <h3>
             Select your Protein <span class="badge bg-secondary"></span>
           </h3>
@@ -160,6 +214,7 @@ function displayRecipes (value){
         </div> */}
         <RecipeList />
       </div>
+      
       <hr />
     </>
   );

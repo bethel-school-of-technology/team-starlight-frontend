@@ -35,9 +35,7 @@ const Details = () => {
 }, [id]);
 
 
-  //let { title, image, servings, readyInMinutes, instructions, analyzedInstructions } = recipe;
-  // console.log(recipe[0]);
-  // console.log(analyzedInstructions);
+  
 
  useEffect(() => {
   async function fetchData() {
@@ -48,10 +46,7 @@ const Details = () => {
 
 
 
-  //let { title, image, servings, readyInMinutes, instructions, analyzedInstructions } = recipe;
   
-  // console.log(recipe[0]);
-  // console.log(analyzedInstructions);
   
   return (<div>
 
@@ -77,4 +72,3 @@ return (<>
   
 export default Details;
 
-//Test

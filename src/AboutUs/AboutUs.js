@@ -25,7 +25,7 @@ function AboutUs() {
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '20rem'}}>
-                        <Card.Img variant="top" src="https://preview.redd.it/umkotiptjgs61.jpg?auto=webp&s=bbbf2900080548cc873d31d4a4885e5f0d983605" />
+                        <Card.Img variant="top" src="https://ca.slack-edge.com/T9P33872P-U034VF5TR40-9096d45a0676-512" />
                         <Card.Body>
                         <Accordion defaultActiveKey={['1']} alwaysClosed>
                     <Accordion.Item eventKey="1">

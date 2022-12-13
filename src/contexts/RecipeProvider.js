@@ -5,7 +5,7 @@ import RecipeContext from "./RecipeContext";
 export const RecipeProvider = (props) => {
   const [recipes, setRecipes] = useState([]);
   const [recipe, setRecipe] = useState([]);
-  const [recipes, setRecipes] = useState([]);
+  
   const [recipesSaved, setRecipesSaved] = useState([]);
 
   const baseUrl = "http://localhost:3000/api/recipe/";
@@ -24,13 +24,13 @@ export const RecipeProvider = (props) => {
 
   function getAllRecipe(protein,carbohydrate,vegetable) {
     //calls external API,  pass in protein from "Home.js" as parameter
-    const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${protein},${carbohydrate},${vegetable}&number=6&limitLicense=true&ranking=1&ignorePantry=false&apiKey=${apiKey2}&include`;
+    const apiUrl = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${protein},${carbohydrate},${vegetable}&number=6&limitLicense=true&ranking=1&ignorePantry=false&apiKey=${apiKey1}&include`;
     return axios.get(apiUrl).then((response) => setRecipes(response.data));
   }
 
   function getRecipeDetails(id) {
     //calls external API,  pass in "id" as parameter
-    const apiUrl =  `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKey2}&include`;
+    const apiUrl =  `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&apiKey=${apiKey1}&include`;
     console.log(apiUrl);
     return axios.get(apiUrl).then((response) => setRecipe(response.data));
   }
